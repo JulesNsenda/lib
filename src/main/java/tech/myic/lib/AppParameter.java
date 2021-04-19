@@ -18,21 +18,6 @@ public class AppParameter
         return cmdOptions;
     }
 
-    public void setOptions(List<CmdOption> cmdOptions)
-    {
-        this.cmdOptions = cmdOptions;
-    }
-
-    public int getNumberOfParameters()
-    {
-        return numberOfParameters;
-    }
-
-    public void setNumberOfParameters(int numberOfParameters)
-    {
-        this.numberOfParameters = numberOfParameters;
-    }
-
     public static class Builder
     {
         private List<CmdOption> cmdOptions;
