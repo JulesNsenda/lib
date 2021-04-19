@@ -24,14 +24,16 @@ public class Message
 
     public static void main(String[] args)
     {
-        AppParameter appParameter = new AppParameter();
-        appParameter.setNumberOfParameters(2);
         List<CmdOption> cmdOptions = new LinkedList<>();
         CmdOption op1 = new CmdOption();
         op1.setKey("-in=");
         op1.setDescription("Input file");
         cmdOptions.add(op1);
-        appParameter.setOptions(cmdOptions);
+
+        AppParameter appParameter = new AppParameter.Builder()
+                .CmdOptions(cmdOptions)
+                .NumberOfParameters(2)
+                .build();
 
         displayHelpMessage(appParameter, "Test");
     }
