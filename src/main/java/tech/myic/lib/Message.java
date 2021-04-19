@@ -25,10 +25,10 @@ public class Message
     public static void main(String[] args)
     {
         List<CmdOption> cmdOptions = new LinkedList<>();
-        CmdOption op1 = new CmdOption();
-        op1.setKey("-in=");
-        op1.setDescription("Input file");
+        CmdOption op1 = CmdOption.createCmdOption("-in=", "Input file");
         cmdOptions.add(op1);
+        CmdOption op2 = CmdOption.createCmdOption("-out=", "Output file");
+        cmdOptions.add(op2);
 
         AppParameter appParameter = new AppParameter.Builder()
                 .CmdOptions(cmdOptions)
