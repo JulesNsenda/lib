@@ -14,7 +14,6 @@ public class CmdOption
     public static CmdOption createCmdOption(String key, String description)
     {
         return new CmdOption(key, description);
-
     }
 
     public String getKey()
