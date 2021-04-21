@@ -4,13 +4,18 @@ import java.util.List;
 
 public class AppParameter
 {
-    private List<CmdOption> cmdOptions;
-    private int numberOfParameters;
+    private final List<CmdOption> cmdOptions;
+    private final int numberOfParameters;
 
     public AppParameter(Builder builder)
     {
         this.cmdOptions = builder.cmdOptions;
         this.numberOfParameters = builder.numberOfParameters;
+    }
+
+    public int getNumberOfParameters()
+    {
+        return numberOfParameters;
     }
 
     public List<CmdOption> getOptions()
