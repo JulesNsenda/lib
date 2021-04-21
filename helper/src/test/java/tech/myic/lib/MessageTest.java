@@ -46,7 +46,15 @@ class MessageTest
 
         Message.displayHelpMessage(appParameter, "Test");
 
-        Assertions.assertEquals("Usage: Test.jar -in=<Input file> -out=<Output file>", outContent.toString().trim());
+        String expectedOutput = "NAME \n"
+                + "\t Test\n"
+                + "SYNOPSIS \n"
+                + "\t Test.jar -in=<Input file> -out=<Output file> \n"
+                + "DESCRIPTION \n"
+                + "\t ?, --help, -h \n"
+                + "\t\t Displays usage of the Test program";
+
+        Assertions.assertEquals(expectedOutput, outContent.toString().trim());
 
     }
 

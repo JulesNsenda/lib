@@ -18,7 +18,13 @@ class Message
             sb.append(key.concat("<").concat(description).concat("> "));
         }
 
-        System.out.println("Usage: " + applicationName.concat(".jar ") + sb);
+        System.out.println("NAME \n"
+                + "\t " + applicationName + "\n"
+                + "SYNOPSIS \n"
+                + "\t " + applicationName + ".jar " + sb + "\n"
+                + "DESCRIPTION \n"
+                + "\t ?, --help, -h \n"
+                + "\t\t Displays usage of the " + applicationName + " program");
     }
 
 }
