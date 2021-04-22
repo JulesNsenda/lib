@@ -51,6 +51,7 @@ class MessageTest
                 + "SYNOPSIS \n"
                 + "\t Test.jar -in=<Input file> -out=<Output file> \n"
                 + "DESCRIPTION \n"
+                + "TODO: Application description here \n"
                 + "\t ?, --help, -h \n"
                 + "\t\t Displays usage of the Test program";
 

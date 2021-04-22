@@ -1,8 +1,6 @@
 package tech.myic.lib;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 class Message
 {
@@ -22,17 +20,14 @@ class Message
             sb.append(key.concat("<").concat(description).concat("> "));
         }
 
-        Function<? super CmdOption, String> function = (Function<CmdOption, String>) cmdOption -> cmdOption.getKey().concat("\n\t").concat(cmdOption.getComments());
-
         System.out.println("NAME \n"
                 + "\t " + applicationName + "\n"
                 + "SYNOPSIS \n"
                 + "\t " + applicationName + ".jar " + sb + "\n"
                 + "DESCRIPTION \n"
-                + "TODO: Application description here"
+                + "TODO: Application description here \n"
                 + "\t ?, --help, -h \n"
-                + "\t\t Displays usage of the " + applicationName + " program"
-                + cmdOptions.stream().map(function).toString());
+                + "\t\t Displays usage of the " + applicationName + " program");
     }
 
 }
