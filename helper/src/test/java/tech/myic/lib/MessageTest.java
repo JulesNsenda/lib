@@ -34,15 +34,20 @@ class MessageTest
     public void testDisplayHelpMessage_success()
     {
         List<CmdOption> cmdOptions = new LinkedList<>();
-        CmdOption op1 = CmdOption.createCmdOption("-in=", "Input file", "Make sure this option is provided");
+        CmdOption op1 = CmdOption.createCmdOption("-in=", "Input file", "Make sure this input option is provided");
         cmdOptions.add(op1);
-        CmdOption op2 = CmdOption.createCmdOption("-out=", "Output file", "Make sure this option is provided");
+        CmdOption op2 = CmdOption.createCmdOption("-out=", "Output file", "Make sure this output option is provided");
         cmdOptions.add(op2);
 
         AppParameter appParameter = new AppParameter.Builder()
                 .CmdOptions(cmdOptions)
                 .NumberOfParameters(2)
                 .build();
+
+        String optionComments = "";
+        for (CmdOption co : cmdOptions){
+            optionComments += ("\t" + co.getKey()).concat("\n").concat("\t\t").concat(co.getComments()).concat("\n");
+        }
 
         Message.displayHelpMessage(appParameter, "Test");
 
@@ -51,9 +56,10 @@ class MessageTest
                 + "SYNOPSIS \n"
                 + "\t Test.jar -in=<Input file> -out=<Output file> \n"
                 + "DESCRIPTION \n"
-                + "TODO: Application description here \n"
+                + "\tTODO: Application description here \n"
                 + "\t ?, --help, -h \n"
-                + "\t\t Displays usage of the Test program";
+                + "\t\t Displays usage of the Test program \n"
+                + optionComments;
 
         Assertions.assertEquals(expectedOutput, outContent.toString().trim());
 

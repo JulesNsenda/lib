@@ -20,14 +20,20 @@ class Message
             sb.append(key.concat("<").concat(description).concat("> "));
         }
 
+        String optionComments = "";
+        for (CmdOption co : cmdOptions){
+            optionComments += ("\t" + co.getKey()).concat("\n").concat("\t\t").concat(co.getComments()).concat("\n");
+        }
+
         System.out.println("NAME \n"
                 + "\t " + applicationName + "\n"
                 + "SYNOPSIS \n"
                 + "\t " + applicationName + ".jar " + sb + "\n"
                 + "DESCRIPTION \n"
-                + "TODO: Application description here \n"
+                + "\tTODO: Application description here \n"
                 + "\t ?, --help, -h \n"
-                + "\t\t Displays usage of the " + applicationName + " program");
+                + "\t\t Displays usage of the " + applicationName + " program \n"
+                +  optionComments);
     }
 
 }
