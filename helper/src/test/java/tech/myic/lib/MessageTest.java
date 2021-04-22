@@ -34,9 +34,9 @@ class MessageTest
     public void testDisplayHelpMessage_success()
     {
         List<CmdOption> cmdOptions = new LinkedList<>();
-        CmdOption op1 = CmdOption.createCmdOption("-in=", "Input file");
+        CmdOption op1 = CmdOption.createCmdOption("-in=", "Input file", "Make sure this option is provided");
         cmdOptions.add(op1);
-        CmdOption op2 = CmdOption.createCmdOption("-out=", "Output file");
+        CmdOption op2 = CmdOption.createCmdOption("-out=", "Output file", "Make sure this option is provided");
         cmdOptions.add(op2);
 
         AppParameter appParameter = new AppParameter.Builder()
