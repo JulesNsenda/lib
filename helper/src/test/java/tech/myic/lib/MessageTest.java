@@ -44,11 +44,6 @@ class MessageTest
                 .NumberOfParameters(2)
                 .build();
 
-        String optionComments = "";
-        for (CmdOption co : cmdOptions){
-            optionComments += ("\t" + co.getKey()).concat("\n").concat("\t\t").concat(co.getComments()).concat("\n");
-        }
-
         Message.displayHelpMessage(appParameter, "Test");
 
         String expectedOutput = "NAME \n"
@@ -59,8 +54,10 @@ class MessageTest
                 + "\tTODO: Application description here \n"
                 + "\t ?, --help, -h \n"
                 + "\t\t Displays usage of the Test program \n"
-                + optionComments;
-
+                + "\t-in=\n"
+                + "\t\tMake sure this input option is provided\n"
+                + "\t-out=\n"
+                + "\t\tMake sure this output option is provided";
         Assertions.assertEquals(expectedOutput, outContent.toString().trim());
 
     }

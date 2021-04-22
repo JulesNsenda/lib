@@ -4,8 +4,6 @@ import java.util.List;
 
 class Message
 {
-    private String optionComments;
-
     private Message()
     {
     }
@@ -20,9 +18,10 @@ class Message
             sb.append(key.concat("<").concat(description).concat("> "));
         }
 
-        String optionComments = "";
+        StringBuilder optionComments = new StringBuilder();
         for (CmdOption co : cmdOptions){
-            optionComments += ("\t" + co.getKey()).concat("\n").concat("\t\t").concat(co.getComments()).concat("\n");
+            optionComments.append(("\t" + co.getKey()).concat("\n")
+                    .concat("\t\t").concat(co.getComments()).concat("\n"));
         }
 
         System.out.println("NAME \n"
